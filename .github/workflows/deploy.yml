@@ -11,6 +11,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages # ← 這行必須加上
 
     steps:
       - uses: actions/checkout@v4
