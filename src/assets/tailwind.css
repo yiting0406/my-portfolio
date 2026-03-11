@@ -1,7 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Epilogue:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --color-midnight: #121063;
-  --color-tahiti: #3ab7bf;
-  --color-bermuda: #78dcca;
+  --color-ink: #1a1a1a;
+  --color-night: #111111;
+  --color-accent: #e8553e;
+  --color-warm: #ffd285;
+  --color-paper: #fffcf5;
+
+  --shadow-nav: 0 1px 0 rgb(0 0 0 / 0.08);
+  --shadow-lift: 0 20px 40px rgb(0 0 0 / 0.07);
+  --shadow-warm: 0 16px 40px rgb(255 210 133 / 0.2);
+}
+
+@layer base {
+  body {
+    font-family: 'Epilogue', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'DM Serif Display', serif;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply space-y-8 py-4 md:space-y-10 md:py-10;
+  }
+
+  .section-head {
+    @apply space-y-2;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-eyebrow-warm {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-warm;
+  }
+
+  .section-eyebrow-line {
+    @apply h-px w-6 bg-accent;
+  }
+
+  .section-eyebrow-line-warm {
+    @apply h-px w-6 bg-warm;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl text-ink sm:text-4xl md:text-5xl;
+  }
+
+  .section-title-inverse {
+    @apply font-serif text-3xl text-white sm:text-4xl md:text-5xl;
+  }
+
+  .card-surface {
+    @apply border border-transparent bg-white p-5 transition md:p-7;
+  }
+
+  .card-surface-lift {
+    @apply hover:-translate-y-1.5 hover:shadow-lift;
+  }
+
+  .card-surface-warm {
+    @apply hover:-translate-y-1.5 hover:shadow-warm;
+  }
+}
+
+@keyframes float-blob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.04);
+  }
+}
+
+@keyframes badge-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

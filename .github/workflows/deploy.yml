@@ -1,14 +1,17 @@
 name: deploy
 
+# 推送到 main 時自動部署，也可手動觸發。
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# 避免多個部署同時執行互相覆蓋。
 concurrency:
   group: pages
   cancel-in-progress: true
 
+# 透過 GitHub Actions 部署 Pages 所需權限。
 permissions:
   contents: read
   pages: write
@@ -18,20 +21,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
+      # 必須使用 github-pages，讓部署目標正確對應。
       name: github-pages
 
     steps:
+      # 取回儲存庫原始碼。
       - uses: actions/checkout@v4
 
+      # 使用 Node.js 20，確保安裝與建置環境一致。
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 安裝相依套件，並將 Vite 專案建置到 dist/。
       - run: npm install
       - run: npm run build
 
+      # 上傳建置產物，作為 Pages 部署 artifact。
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
+      # 將上傳的 artifact 部署到 GitHub Pages。
       - uses: actions/deploy-pages@v4
