@@ -19,7 +19,7 @@
     </div>
     <div class="group p-6 bg-white hover:bg-blue-600 transition-colors">
       <h2 class="text-black group-hover:text-white">標題文字</h2>
-      <p class="text-gray-500 group-hover:text-blue-100">當你碰到外面的框框，我就會變色</p>
+      <p class="text-gray-500 group-hover:text-blue-100">當你碰到外面的框框，我就會變色!!</p>
     </div>
   </div>
 </template>
