@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Animations
+   - All @keyframes declarations live here.
+   - Name keyframes in kebab-case and document their usage.
+   ========================================================================== */
+
+/* Used by: HeroSection — profile image blob */
+@keyframes float-blob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.04);
+  }
+}
+
+/* Used by: HeroSection — availability badge entrance */
+@keyframes badge-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Used by: MarqueeSection — horizontal ticker scroll */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
