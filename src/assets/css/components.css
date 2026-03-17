@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Component Classes
+   - Reusable multi-utility patterns extracted via @apply.
+   - Grouped by purpose: Section shell → Section head → Cards.
+   - Keep selectors semantic and prefix by feature (section-, card-).
+   ========================================================================== */
+
+@layer components {
+  /* ---------- Section shell ---------- */
+  .section-shell {
+    @apply space-y-8 py-4 md:space-y-10 md:py-10;
+  }
+
+  /* ---------- Section head ---------- */
+  .section-head {
+    @apply space-y-2;
+  }
+
+  /* Eyebrow label — accent (default) */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent;
+  }
+
+  /* Eyebrow label — warm variant */
+  .section-eyebrow-warm {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-warm;
+  }
+
+  /* Eyebrow decorative line */
+  .section-eyebrow-line {
+    @apply h-px w-6 bg-accent;
+  }
+
+  .section-eyebrow-line-warm {
+    @apply h-px w-6 bg-warm;
+  }
+
+  /* Section titles */
+  .section-title {
+    @apply font-serif text-3xl text-ink sm:text-4xl md:text-5xl;
+  }
+
+  .section-title-inverse {
+    @apply font-serif text-3xl text-white sm:text-4xl md:text-5xl;
+  }
+
+  /* ---------- Cards ---------- */
+  .card-surface {
+    @apply border border-transparent bg-white p-5 transition md:p-7;
+  }
+
+  /* Hover interaction variants */
+  .card-surface-lift {
+    @apply hover:-translate-y-1.5 hover:shadow-lift;
+  }
+
+  .card-surface-warm {
+    @apply hover:-translate-y-1.5 hover:shadow-warm;
+  }
+}

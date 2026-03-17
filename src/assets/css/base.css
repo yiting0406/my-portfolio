@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Base Layer
+   - HTML element defaults and global typography.
+   - Avoid adding component-level rules here; use components.css instead.
+   ========================================================================== */
+
+@layer base {
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Epilogue', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Noto Serif TC', 'DM Serif Display', serif, sans-serif;
+  }
+}

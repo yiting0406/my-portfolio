@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Design Tokens
+   - All @theme variables live here.
+   - Add new colors, shadows, or spacing values in this file only.
+   - Reference: docs/theme-naming-guidelines.md
+   ========================================================================== */
+
+@theme {
+  /* Colors */
+  --color-ink: #1a1a1a;
+  --color-night: #111111;
+  --color-accent: #e8553e;
+  --color-warm: #ffd285;
+  --color-paper: #fffcf5;
+
+  /* Shadows */
+  --shadow-nav: 0 1px 0 rgb(0 0 0 / 0.08);
+  --shadow-lift: 0 20px 40px rgb(0 0 0 / 0.07);
+  --shadow-warm: 0 16px 40px rgb(255 210 133 / 0.2);
+}
